@@ -22,7 +22,6 @@ const fillFeedbackFormField = () => {
   }
 };
 
-fillFeedbackFormField();
 //із інпута в localStorage
 const onFiledfeedbackFormChange = ({ target: feedbackFormField }) => {
   const feedbackFormFieldValue = feedbackFormField.value;
@@ -40,7 +39,11 @@ const onFeedbackFormSubmit = event => {
   feedbackForm.reset();
   localStorage.removeItem(STOKE_KEY);
 };
-
+// trotu
+feedbackForm.addEventListener(
+  'input',
+  throttle(onFiledfeedbackFormChange, 500)
+);
 //слухачі
 feedbackForm.addEventListener('change', onFiledfeedbackFormChange);
 feedbackForm.addEventListener('submit', onFeedbackFormSubmit);
