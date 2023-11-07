@@ -9,19 +9,34 @@
     <link rel="stylesheet" href="css/03-feedback.css" />
   </head>
   <body>
-    <p><a href="index.html">Go back</a></p>
+    <p class="back-home"><a href="index.html">Go back</a></p>
 
-    <form class="feedback-form" autocomplete="off">
-      <label>
-        Email
-        <input type="email" name="email" autofocus />
-      </label>
-      <label>
-        Message
-        <textarea name="message" rows="8"></textarea>
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+    <div class="background"></div>
+    <div class="home">
+      <div class="content">
+        <h2>オレグ・オポロネツ</h2>
+        <h3>キラ・ポテヒナ</h3>
+        <p>イリーナ・コストロミツカ | オレクサンドル</p>
+        <div class="icon">
+          <i>icon</i>
+          <i>icon</i>
+          <i>icon</i>
+          <i>icon</i>
+        </div>
+      </div>
+      <form class="feedback-form" autocomplete="off">
+        <h2>Feedback Form</h2>
+        <label>
+          Email
+          <input type="email" name="email" autofocus />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="8"></textarea>
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
 
     <script src="js/03-feedback.js" type="module"></script>
   </body>

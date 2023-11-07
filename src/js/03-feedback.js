@@ -14,7 +14,6 @@ const fillFeedbackFormField = () => {
     return;
   }
 
-  console.log(userDataFromLS);
   for (const key in userDataFromLS) {
     if (userDataFromLS.hasOwnProperty(key)) {
       feedbackForm.elements[key].value = userDataFromLS[key];
@@ -30,7 +29,6 @@ const onFiledfeedbackFormChange = ({ target: feedbackFormField }) => {
   userData[feedbackFormFieldName] = feedbackFormFieldValue;
 
   localStorage.setItem(STOKE_KEY, JSON.stringify(userData));
-  console.log(userData);
 };
 
 const onFeedbackFormSubmit = event => {
@@ -38,6 +36,7 @@ const onFeedbackFormSubmit = event => {
 
   feedbackForm.reset();
   localStorage.removeItem(STOKE_KEY);
+  console.log(userData);
 };
 // trotu
 feedbackForm.addEventListener(
