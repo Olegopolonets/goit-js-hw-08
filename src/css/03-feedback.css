@@ -32,7 +32,7 @@
   transform: translate(-50%, -50%);
   background-image: url('../images/tokyo.jpg');
   background-position: center;
-  background-position: cover;
+  background-size: cover;
   display: flex;
   border-radius: 10px;
 }
@@ -114,7 +114,7 @@ button {
   font-size: 20px;
   font-weight: 700;
   border-radius: 7px;
-  color: black;
+  color: #212121;
 }
 
 button:hover {

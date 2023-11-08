@@ -1,4 +1,6 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -7,12 +9,82 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
-  color: #212121;
   line-height: 1.5;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(45deg, #061de3, #e306ca);
+  color: rgb(211, 211, 211);
+  display: flex;
+  gap: 40px;
 }
 
 img {
   display: block;
   max-width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  gap: 100px;
+  width: 1200px;
+  height: 500px;
+  perspective: 800px;
+  list-style: none;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  position: absolute;
+  backface-visibility: hidden;
+  text-decoration: none;
+  color: #fff;
+}
+
+.front {
+  background-position: center;
+  background-size: cover;
+}
+
+.front-img-1 {
+  background-image: url('../images/gallary-neon-img.jpg');
+}
+
+.front-img-2 {
+  background-image: url('../images/video-img.jpg');
+}
+
+.front-img-3 {
+  background-image: url('../images/feedback-img.jpg');
+}
+
+.back {
+  background-color: #3a3a3a;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
 }
