@@ -4,8 +4,6 @@ const feedbackForm = document.querySelector('.feedback-form');
 const STOKE_KEY = 'feedback-form-state';
 let userData = {};
 
-// lodash.throttle
-
 // запис в localStorage із інпута
 const fillFeedbackFormField = () => {
   const userDataFromLS = JSON.parse(localStorage.getItem(STOKE_KEY));
@@ -17,6 +15,9 @@ const fillFeedbackFormField = () => {
   for (const key in userDataFromLS) {
     if (userDataFromLS.hasOwnProperty(key)) {
       feedbackForm.elements[key].value = userDataFromLS[key];
+      if (userDataFromLS[key]) {
+        userData[key] = userDataFromLS[key];
+      }
     }
   }
 };
@@ -25,7 +26,7 @@ fillFeedbackFormField();
 const onFiledfeedbackFormChange = ({ target: feedbackFormField }) => {
   const feedbackFormFieldValue = feedbackFormField.value;
   const feedbackFormFieldName = feedbackFormField.name;
-
+  console.log('userData: ', userData);
   userData[feedbackFormFieldName] = feedbackFormFieldValue;
 
   localStorage.setItem(STOKE_KEY, JSON.stringify(userData));
@@ -39,11 +40,10 @@ const onFeedbackFormSubmit = event => {
 
   console.log(userData);
 };
-// trotu
+
+//слухачі
 feedbackForm.addEventListener(
   'input',
   throttle(onFiledfeedbackFormChange, 500)
 );
-//слухачі
-feedbackForm.addEventListener('change', onFiledfeedbackFormChange);
 feedbackForm.addEventListener('submit', onFeedbackFormSubmit);
