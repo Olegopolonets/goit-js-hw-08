@@ -11,7 +11,7 @@ function onPlay(data) {
   localStorage.setItem('videoplayer-current-time', data.seconds);
 }
 
-player.on('timeupdate', trottle(onPlay), 1000);
+player.on('timeupdate', trottle(onPlay, 2000));
 
 const timeFromLocalStorage = localStorage.getItem('videoplayer-current-time');
 
